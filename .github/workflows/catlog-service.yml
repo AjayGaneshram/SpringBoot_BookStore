@@ -28,7 +28,7 @@ jobs:
           cache: 'maven'
 
       - name: Ensure mvnw is executable
-        run: chmod +x mvnw
+        run: chmod +x ./mvnw
 
       - name: Build with Maven Wrapper
         run: ./mvnw -ntp verify
