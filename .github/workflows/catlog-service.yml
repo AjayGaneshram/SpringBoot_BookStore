@@ -17,7 +17,8 @@ jobs:
       run:
         working-directory: ${{ env.working-directory }}
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
       - name: Setup Java 21
         uses: actions/setup-java@v4
@@ -26,8 +27,8 @@ jobs:
           distribution: 'temurin'
           cache: 'maven'
 
-      - name: Make mvnw executable
+      - name: Ensure mvnw is executable
         run: chmod +x mvnw
 
-      - name: Build with Maven
+      - name: Build with Maven Wrapper
         run: ./mvnw -ntp verify
