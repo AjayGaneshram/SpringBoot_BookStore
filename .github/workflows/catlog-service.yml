@@ -12,10 +12,6 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
 
-    defaults:
-      run:
-        working-directory: ./catlog-services
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -30,5 +26,5 @@ jobs:
       - name: Ensure mvnw is executable
         run: chmod +x ./mvnw
 
-      - name: Build with Maven Wrapper
-        run: ./mvnw -ntp verify
+      - name: Build with Maven Wrapper (catlog-services module only)
+        run: ./mvnw -ntp -pl catlog-services verify
