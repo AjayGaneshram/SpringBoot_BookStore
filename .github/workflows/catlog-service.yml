@@ -3,7 +3,7 @@ name: Catlog Service
 on:
   push:
     paths:
-      - catlog-service/**
+      - catlog-services/**
     branches:
       - '**'
 
@@ -12,7 +12,7 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     env:
-      working-directory: ./catlog-service
+      working-directory: ./catlog-services
     defaults:
       run:
         working-directory: ${{ env.working-directory }}
