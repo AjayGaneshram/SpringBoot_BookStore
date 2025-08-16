@@ -23,8 +23,8 @@ jobs:
           distribution: 'temurin'
           cache: 'maven'
 
-      - name: Ensure mvnw is executable
-        run: chmod +x ./mvnw
+      - name: Make Maven wrapper executable
+        run: chmod +x mvnw
 
-      - name: Build with Maven Wrapper (catlog-services module only)
-        run: ./mvnw -ntp -pl catlog-services verify
+      - name: Build with Maven
+        run: ./mvnw -ntp verify
